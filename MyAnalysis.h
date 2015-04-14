@@ -189,6 +189,29 @@ public:
   
    TH1F *h_Melel;
    TH1F *h_NElectron;
+
+   TH1F *h_Mjeje;
+   TH1F *h_NJet;
+
+   TH1F *h_NbJet;
+
+   TH1F *h_oneLeptonMjeje;
+   TH1F *h_oneLeptonNJet;
+
+	TH1F *h_oneLeptonMbjeje;
+   TH1F *h_oneLeptonNbJet;
+
+	TH1F *h_oneLeptonMjeje2;
+   TH1F *h_oneLeptonNJet2;
+
+	TH1F *h_oneLeptonMbjeje2;
+   TH1F *h_oneLeptonNbJet2;
+
+	TH1F *h_oneLeptonMjeje3;
+   TH1F *h_oneLeptonNJet3;
+
+	TH1F *h_oneLeptonMbjeje3;
+   TH1F *h_oneLeptonNbJet3;
  
    vector<TH1F*> histograms;
    vector<TH1F*> histograms_MC;

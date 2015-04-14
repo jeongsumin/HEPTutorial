@@ -18,7 +18,7 @@
 #include <TCanvas.h>
 #include <TLegend.h>
 #include <TROOT.h>
-
+#include <TLatex.h>
 
 class Plotter {
 public:

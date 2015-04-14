@@ -114,6 +114,97 @@ void MyAnalysis::SlaveBegin(TTree * /*tree*/) {
    h_NElectron->Sumw2();
    histograms.push_back(h_NElectron);
    histograms_MC.push_back(h_NElectron);
+
+   h_Mjeje = new TH1F("Mjeje", "Invariant di-jet mass", 60, 60, 120);
+   h_Mjeje->SetXTitle("m_{jeje}");
+   h_Mjeje->Sumw2();
+   histograms.push_back(h_Mjeje);
+   histograms_MC.push_back(h_Mjeje);
+   
+   h_NJet = new TH1F("NJet", "Number of Jets", 7, 0, 7);
+   h_NJet->SetXTitle("No. Jet");
+   h_NJet->Sumw2();
+   histograms.push_back(h_NJet);
+   histograms_MC.push_back(h_NJet);
+
+   h_NbJet = new TH1F("NbJet", "Number of bJets", 7, 0, 7);
+   h_NbJet->SetXTitle("No. bJet");
+   h_NbJet->Sumw2();
+   histograms.push_back(h_NbJet);
+   histograms_MC.push_back(h_NbJet);
+
+   h_oneLeptonMjeje = new TH1F("oneLeptonMjeje", "Invariant oneLeptondi-jet mass", 60, 60, 120);
+   h_oneLeptonMjeje->SetXTitle("m_{jeje}");
+   h_oneLeptonMjeje->Sumw2();
+   histograms.push_back(h_oneLeptonMjeje);
+   histograms_MC.push_back(h_oneLeptonMjeje);
+
+   h_oneLeptonNJet = new TH1F("oneLeptonNJet", "Number of oneLeptonJets", 7, 0, 7);
+   h_oneLeptonNJet->SetXTitle("No. oneLeptonJet");
+   h_oneLeptonNJet->Sumw2();
+   histograms.push_back(h_oneLeptonNJet);
+   histograms_MC.push_back(h_oneLeptonNJet);
+
+   h_oneLeptonMbjeje = new TH1F("oneLeptonMbjeje", "Invariant oneLeptondi-bjet mass", 60, 60, 120);
+   h_oneLeptonMbjeje->SetXTitle("m_{bjeje}");
+   h_oneLeptonMbjeje->Sumw2();
+   histograms.push_back(h_oneLeptonMbjeje);
+   histograms_MC.push_back(h_oneLeptonMbjeje);
+
+   h_oneLeptonNbJet = new TH1F("oneLeptonNbJet", "Number of oneLeptonbJets", 7, 0, 7);
+   h_oneLeptonNbJet->SetXTitle("No. oneLeptonbJet");
+   h_oneLeptonNbJet->Sumw2();
+   histograms.push_back(h_oneLeptonNbJet);
+   histograms_MC.push_back(h_oneLeptonNbJet);
+
+	h_oneLeptonMjeje2 = new TH1F("oneLeptonMjeje2", "Invariant oneLeptondi-jet mass", 60, 60, 120);
+   h_oneLeptonMjeje2->SetXTitle("m2_{jeje}");
+   h_oneLeptonMjeje2->Sumw2();
+   histograms.push_back(h_oneLeptonMjeje2);
+   histograms_MC.push_back(h_oneLeptonMjeje2);
+
+   h_oneLeptonNJet2 = new TH1F("oneLeptonNJet2", "Number of oneLeptonJets", 7, 0, 7);
+   h_oneLeptonNJet2->SetXTitle("No. oneLeptonJet2");
+   h_oneLeptonNJet2->Sumw2();
+   histograms.push_back(h_oneLeptonNJet2);
+   histograms_MC.push_back(h_oneLeptonNJet2);
+
+   h_oneLeptonMbjeje2 = new TH1F("oneLeptonMbjeje2", "Invariant oneLeptondi-bjet mass", 60, 60, 120);
+   h_oneLeptonMbjeje2->SetXTitle("m2_{bjeje}");
+   h_oneLeptonMbjeje2->Sumw2();
+   histograms.push_back(h_oneLeptonMbjeje2);
+   histograms_MC.push_back(h_oneLeptonMbjeje2);
+
+   h_oneLeptonNbJet2 = new TH1F("oneLeptonNbJet2", "Number of oneLeptonbJets", 7, 0, 7);
+   h_oneLeptonNbJet2->SetXTitle("No. oneLeptonbJet2");
+   h_oneLeptonNbJet2->Sumw2();
+   histograms.push_back(h_oneLeptonNbJet2);
+   histograms_MC.push_back(h_oneLeptonNbJet2);
+
+	h_oneLeptonMjeje3 = new TH1F("oneLeptonMjeje3", "Invariant oneLeptondi-jet mass", 60, 60, 120);
+   h_oneLeptonMjeje3->SetXTitle("m3_{jeje}");
+   h_oneLeptonMjeje3->Sumw2();
+   histograms.push_back(h_oneLeptonMjeje3);
+   histograms_MC.push_back(h_oneLeptonMjeje3);
+
+   h_oneLeptonNJet3 = new TH1F("oneLeptonNJet3", "Number of oneLeptonJets", 7, 0, 7);
+   h_oneLeptonNJet3->SetXTitle("No. oneLeptonJet3");
+   h_oneLeptonNJet3->Sumw2();
+   histograms.push_back(h_oneLeptonNJet3);
+   histograms_MC.push_back(h_oneLeptonNJet3);
+
+   h_oneLeptonMbjeje3 = new TH1F("oneLeptonMbjeje3", "Invariant oneLeptondi-bjet mass", 60, 60, 120);
+   h_oneLeptonMbjeje3->SetXTitle("m3_{bjeje}");
+   h_oneLeptonMbjeje3->Sumw2();
+   histograms.push_back(h_oneLeptonMbjeje3);
+   histograms_MC.push_back(h_oneLeptonMbjeje3);
+
+   h_oneLeptonNbJet3 = new TH1F("oneLeptonNbJet3", "Number of oneLeptonbJets", 7, 0, 7);
+   h_oneLeptonNbJet3->SetXTitle("No. oneLeptonbJet3");
+   h_oneLeptonNbJet3->Sumw2();
+   histograms.push_back(h_oneLeptonNbJet3);
+   histograms_MC.push_back(h_oneLeptonNbJet3);
+   
    
 }
 
@@ -150,6 +241,11 @@ Bool_t MyAnalysis::Process(Long64_t entry) {
 
    double ElectronPtCut = 25.;
    double ElectronRelIsoCut = 0.10;
+
+   double JetPtCut = 30.;
+   double JetEtaCut = 2.5;
+
+   double bTagCut = 2;
    
    //   cout << "Jets: " << endl;
    //   for (vector<MyJet>::iterator it = Jets.begin(); it != Jets.end(); ++it) {
@@ -203,16 +299,77 @@ Bool_t MyAnalysis::Process(Long64_t entry) {
          ++N_IsoElectron;
          if (N_IsoElectron == 1) Electron1 = &(*jt);
          if (N_IsoElectron == 2) Electron2 = &(*jt);
-      }
-   }
+              }
+        }
    
    h_NElectron->Fill(N_IsoElectron, EventWeight);
    
    if (N_IsoElectron > 1 && triggerIsoMu24) {
       if (Electron1->Pt()>ElectronPtCut) {
          h_Melel->Fill((*Electron1 + *Electron2).M(), EventWeight);
+              }
+       }
+   
+   int N_lepton = N_IsoMuon + N_IsoElectron;
+
+	int N_Jet = 0;
+	int N_bJet = 0;
+	MyJet *jet1, *jet2, *bjet1, *bjet2;
+      
+   for (vector<MyJet>::iterator jt = Jets.begin(); jt != Jets.end(); ++jt) {
+		if (jt->Pt()>JetPtCut && abs(jt->Eta())<JetEtaCut){
+			++N_Jet;
+			if (N_Jet == 1) jet1 = &(*jt);
+			if (N_Jet == 2) jet2 = &(*jt);
+			if (jt->IsBTagged(bTagCut)) {
+				++N_bJet;  //(bTag 개수)
+				if (N_bJet == 1) bjet1 = &(*jt);
+				if (N_bJet == 2) bjet2 = &(*jt);
+			} 
+		}
+	}
+	int N_bTagged = N_Jet + N_bJet;
+   
+	h_NJet->Fill(N_Jet, EventWeight);
+
+    h_NbJet->Fill(N_bJet, EventWeight);
+
+	h_Mjeje->Fill((*jet1 + *jet2).M(), EventWeight); //page 5(순서는 MyAnalysis.h에서 TH1F에 무슨 순서로 쓰느냐에 따라 정해짐)
+	if(N_lepton != 1) return kTRUE; //kTRUE->루프 빠짐
+	h_oneLeptonNJet->Fill(N_Jet, EventWeight);
+	h_oneLeptonMjeje->Fill((*jet1 + *jet2).M(), EventWeight);
+
+	h_oneLeptonNbJet->Fill(N_bJet, EventWeight);
+	h_oneLeptonMbjeje->Fill((*bjet1 + *bjet2).M(), EventWeight);
+
+	if(N_bJet < 1) return kTRUE; //이 상태는 N_Jet!=0의 컷만 줬을때의 ttbar개수가 온전히 남지않음
+	h_oneLeptonNJet2->Fill(N_Jet, EventWeight);
+	h_oneLeptonMjeje2->Fill((*jet1 + *jet2).M(), EventWeight);
+
+	h_oneLeptonNbJet2->Fill(N_bJet, EventWeight);
+	h_oneLeptonMbjeje2->Fill((*bjet1 + *bjet2).M(), EventWeight);
+
+
+
+	if(N_bJet < 2) return kTRUE; //이 상태는 N_Jet!=0의 컷만 줬을때의 ttbar개수가 온전히 남지않음
+	h_oneLeptonNJet3->Fill(N_Jet, EventWeight);
+	h_oneLeptonMjeje3->Fill((*jet1 + *jet2).M(), EventWeight);
+
+	h_oneLeptonNbJet3->Fill(N_bJet, EventWeight);
+	h_oneLeptonMbjeje3->Fill((*bjet1 + *bjet2).M(), EventWeight);
+
+	
+
+	
+
+
+
+   
+   /*if (N_IsoJet > 1 && triggerIsoMu24) {
+      if (jet1->Pt()>JetPtCut) {
+         h_Mjeje->Fill((*jet1 + *jet2).M(), EventWeight);
       }
-   }
+   }*/
    //////////////////////////////
    
    return kTRUE;

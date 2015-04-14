@@ -34,8 +34,8 @@ void Plotter::Plot(std::string filename) {
 	MyStyle->SetPadTickY(1);
 	MyStyle->SetPadBorderSize(2);
 	MyStyle->SetPalette(51, 0);
-	MyStyle->SetPadBottomMargin(0.15);
-	MyStyle->SetPadTopMargin(0.05);
+	MyStyle->SetPadBottomMargin(0.1);
+	MyStyle->SetPadTopMargin(0.1);
 	MyStyle->SetPadLeftMargin(0.15);
 	MyStyle->SetPadRightMargin(0.25);
 	MyStyle->SetTitleColor(1);
@@ -79,6 +79,7 @@ void Plotter::Plot(std::string filename) {
       l->SetLineWidth(2);
 		if (bg.size() > 0) {
 			hs = new THStack("hs", bg.at(0).at(i)->GetName());
+			if(bg.data() > 0) std::cout << bg.at(0).at(i)->GetName() << std::endl;
 			int j = 0;
 			for (std::vector<std::vector<TH1F*> >::const_iterator it = bg.begin(); it != bg.end(); ++it) {
 				switch (j) {
@@ -115,6 +116,7 @@ void Plotter::Plot(std::string filename) {
 				}
 				hs->Add(it->at(i));
 				l->AddEntry(it->at(i), bg_names.at(j).c_str(), "f");
+				std::cout << bg_names.at(j).c_str() << " number of events = " << it->at(i)->Integral() << std::endl;
 				++j;
 			}
 		}
@@ -122,7 +124,8 @@ void Plotter::Plot(std::string filename) {
 
 		TCanvas *c = new TCanvas("c", "c", 800, 600);
 		c->SetLogy(DrawLog);
-      std::string plotname;
+		std::string plotname;
+
 		if (data.size() > 0) {
          plotname = std::string(data.at(0).at(i)->GetName());
 			data.at(0).at(i)->SetMaximum(5 * data.at(0).at(i)->GetMaximum());
@@ -151,6 +154,12 @@ void Plotter::Plot(std::string filename) {
          l->Draw("same");
 		}
 //      c->Print((filename+std::string("_")+plotname+std::string(".pdf")).c_str());
+
+		TLatex *label= new TLatex;
+  		label->SetNDC();
+  		label->SetTextSize(0.04);
+  		label->DrawLatex(0.3,0.95,bg.at(0).at(i)->GetName());
+
 		if (i == 0 && N_histos > 1) {
 			c->Print((filename+std::string("(")).c_str());
 		} else if (i > 0 && i == N_histos - 1)
